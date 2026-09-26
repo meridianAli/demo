@@ -3,6 +3,24 @@ const sendButton = document.getElementById('sendButton');
 const conversation = document.getElementById('conversation');
 const toast = document.getElementById('toast');
 let toastTimer;
+const paletteButtons = [...document.querySelectorAll('.palette-option')];
+
+function setPalette(theme) {
+  if (!paletteButtons.some(button => button.dataset.theme === theme)) return;
+  document.body.dataset.theme = theme;
+  paletteButtons.forEach(button => {
+    const selected = button.dataset.theme === theme;
+    button.classList.toggle('active', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  });
+  try { localStorage.setItem('proof-palette', theme); } catch {}
+}
+
+paletteButtons.forEach(button => button.addEventListener('click', () => {
+  setPalette(button.dataset.theme);
+  showToast(`${button.querySelector('span:last-child').textContent} palette selected.`);
+}));
+try { setPalette(localStorage.getItem('proof-palette') || 'ember'); } catch { setPalette('ember'); }
 
 function showToast(message) {
   toast.textContent = message;
