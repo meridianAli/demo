@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111214" />
+  <meta name="description" content="A calmer way to work through math, one clear step at a time." />
+  <title>Proof — Math, made clear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <a class="brand" href="#" aria-label="Proof home"><span class="brand-mark">∑</span><span>proof<span class="brand-period">.</span></span></a>
+        <button class="icon-button sidebar-close" id="sidebarClose" aria-label="Close menu">×</button>
+      </div>
+      <button class="new-chat" id="newChat"><span class="plus">＋</span> New chat <kbd>⌘ K</kbd></button>
+      <div class="side-section">
+        <div class="section-label">YOUR SPACE</div>
+        <button class="side-link active"><span class="nav-icon">◌</span> Chat</button>
+        <button class="side-link" data-toast="Your saved solutions will show up here."><span class="nav-icon">▤</span> Saved solutions</button>
+        <button class="side-link" data-toast="Your study sets are coming soon."><span class="nav-icon">▦</span> Study sets <span class="soon">SOON</span></button>
+      </div>
+      <div class="history-section">
+        <div class="section-label">RECENT</div>
+        <button class="history-item selected"><span class="history-dot"></span> Quadratic equations</button>
+        <button class="history-item" data-toast="This chat is a visual preview."><span class="history-dot"></span> Limits & continuity</button>
+        <button class="history-item" data-toast="This chat is a visual preview."><span class="history-dot"></span> Chain rule practice</button>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="plan-card"><div class="plan-top"><span class="sparkle">✳</span><span>Made for the “wait, why?”</span></div><p>Get clear, patient explanations for every step.</p><button data-toast="You're already on the list.">Explore Proof <span>↗</span></button></div>
+        <button class="profile" data-toast="Account settings are coming soon."><span class="avatar">A</span><span class="profile-info"><strong>Alex Morgan</strong><small>Free plan</small></span><span class="more">···</span></button>
+      </div>
+    </aside>
+    <main class="main-panel">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="model-picker"><span class="online-dot"></span> Proof tutor <span class="chevron">⌄</span></div>
+        <div class="top-actions"><button class="share-button" id="shareButton"><span>↗</span> Share</button><button class="icon-button more-button" aria-label="More options">···</button></div>
+      </header>
+      <section class="conversation" id="conversation" aria-label="Chat conversation">
+        <div class="date-label"><span></span> TODAY <span></span></div>
+        <div class="user-message-row"><div class="user-message">Can you help me solve <span class="math-inline">x² − 5x + 6 = 0</span> and explain why each step works?</div></div>
+        <div class="assistant-heading"><span class="assistant-mark">∑</span><span>PROOF</span><span class="answer-time">just now</span></div>
+        <article class="answer-card">
+          <p class="answer-intro">Absolutely. We’re looking for the values of <span class="math-inline">x</span> that make the equation true. Let’s find them together.</p>
+          <div class="step-row"><div class="step-number">01</div><div class="step-content"><div class="step-title">Look for a factor pair</div><p>We need two numbers that <strong>multiply to 6</strong> and <strong>add to −5</strong>.</p><div class="factor-chips"><span>−2 × −3 = 6</span><span>−2 + −3 = −5</span></div></div></div>
+          <div class="step-row"><div class="step-number">02</div><div class="step-content"><div class="step-title">Rewrite as factors</div><p>That pair lets us split the quadratic into two simpler pieces:</p><div class="equation-box"><span class="equation">(x − 2)(x − 3) = 0</span><button class="copy-equation" aria-label="Copy equation" data-copy="(x − 2)(x − 3) = 0">⧉</button></div></div></div>
+          <div class="step-row"><div class="step-number">03</div><div class="step-content"><div class="step-title">Set each factor to zero</div><p>If two things multiply to zero, at least one of them must be zero.</p><div class="split-equations"><span>x − 2 = 0 <b>→</b> x = 2</span><span>x − 3 = 0 <b>→</b> x = 3</span></div></div></div>
+          <div class="answer-result"><span class="result-check">✓</span><div><small>YOUR SOLUTIONS</small><div class="result-values">x = 2 <i>or</i> x = 3</div></div><span class="result-sparkle">✳</span></div>
+          <div class="answer-footer"><span>Does that make sense so far?</span><div class="feedback-actions"><button aria-label="Helpful" data-toast="Thanks for the feedback!">♡</button><button aria-label="Not helpful" data-toast="Thanks, I’ll keep improving.">♧</button><button aria-label="Copy answer" data-copy="The solutions are x = 2 or x = 3.">⧉</button></div></div>
+        </article>
+        <div class="follow-up-label">KEEP GOING</div>
+        <div class="suggestions"><button class="suggestion" data-prompt="Can you check the solutions by substituting them back in?"><span class="suggestion-icon">⌕</span><span>Can we check the answer?</span><span class="suggestion-arrow">↗</span></button><button class="suggestion" data-prompt="Give me another factoring problem like this one to try."><span class="suggestion-icon">✳</span><span>Give me one to try</span><span class="suggestion-arrow">↗</span></button></div>
+      </section>
+      <div class="composer-wrap"><div class="composer" id="composer"><textarea id="messageInput" rows="1" placeholder="Ask anything about math…" aria-label="Message Proof"></textarea><div class="composer-bottom"><div class="composer-tools"><button class="tool-button" data-toast="Image upload is coming soon." aria-label="Add image">＋</button><button class="mode-button" data-toast="Choose a subject (coming soon)."><span>◈</span> Algebra <span class="chevron">⌄</span></button></div><button class="send-button" id="sendButton" aria-label="Send message" disabled>↑</button></div></div><div class="privacy-note"><span class="lock-icon">⌑</span> Proof can make mistakes. Check important work.</div></div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="mobile-scrim" id="mobileScrim"></div>
+  <script src="app.js"></script>
+</body>
+</html>
