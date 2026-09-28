@@ -13,14 +13,14 @@ function setPalette(theme) {
     button.classList.toggle('active', selected);
     button.setAttribute('aria-pressed', String(selected));
   });
-  try { localStorage.setItem('proof-palette', theme); } catch {}
+  try { localStorage.setItem('proof-palette-v2', theme); } catch {}
 }
 
 paletteButtons.forEach(button => button.addEventListener('click', () => {
   setPalette(button.dataset.theme);
   showToast(`${button.querySelector('span:last-child').textContent} palette selected.`);
 }));
-try { setPalette(localStorage.getItem('proof-palette') || 'ember'); } catch { setPalette('ember'); }
+try { setPalette(localStorage.getItem('proof-palette-v2') || 'plum'); } catch { setPalette('plum'); }
 
 function showToast(message) {
   toast.textContent = message;
