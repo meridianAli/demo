@@ -4,72 +4,127 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#111214" />
-  <meta name="description" content="A calmer way to work through math, one clear step at a time." />
-  <title>Proof — Math, made clear</title>
+  <meta name="description" content="Path to Reason — a workspace for quantitative mathematics and research." />
+  <title>Path to Reason — Mathematical Research</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=STIX+Two+Text:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-theme="plum">
+<body>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
       <div class="brand-row">
-        <a class="brand" href="#" aria-label="Proof home"><span class="brand-mark">∑</span><span>proof<span class="brand-period">.</span></span></a>
+        <a class="brand" href="#" aria-label="Path to Reason home">
+          <span class="brand-mark">∑</span>
+          <span class="brand-lockup"><strong>path to reason</strong><small>MATHEMATICAL RESEARCH</small></span>
+        </a>
         <button class="icon-button sidebar-close" id="sidebarClose" aria-label="Close menu">×</button>
       </div>
-      <button class="new-chat" id="newChat"><span class="plus">＋</span> New chat <kbd>⌘ K</kbd></button>
+      <button class="new-chat" id="newChat"><span class="plus">＋</span> New research session <kbd>Ctrl K</kbd></button>
       <div class="side-section">
-        <div class="section-label">YOUR SPACE</div>
-        <button class="side-link active"><span class="nav-icon">◌</span> Chat</button>
-        <button class="side-link" data-toast="Your saved solutions will show up here."><span class="nav-icon">▤</span> Saved solutions</button>
-        <button class="side-link" data-toast="Your study sets are coming soon."><span class="nav-icon">▦</span> Study sets <span class="soon">SOON</span></button>
+        <div class="section-label">WORKSPACE</div>
+        <button class="side-link active"><span class="nav-icon">∑</span> Research chat</button>
+        <button class="side-link" data-toast="Research notebooks are coming soon."><span class="nav-icon">▤</span> Notebooks</button>
+        <button class="side-link" data-toast="Saved derivations are coming soon."><span class="nav-icon">∫</span> Derivations</button>
       </div>
       <div class="history-section">
-        <div class="section-label">RECENT</div>
-        <button class="history-item selected"><span class="history-dot"></span> Quadratic equations</button>
-        <button class="history-item" data-toast="This chat is a visual preview."><span class="history-dot"></span> Limits & continuity</button>
-        <button class="history-item" data-toast="This chat is a visual preview."><span class="history-dot"></span> Chain rule practice</button>
+        <div class="section-label">RECENT SESSIONS</div>
+        <button class="history-item selected"><span class="history-dot"></span><span>Heston characteristic function</span></button>
+        <button class="history-item" data-toast="This is a sample research session."><span class="history-dot"></span><span>Spectral gap bounds</span></button>
+        <button class="history-item" data-toast="This is a sample research session."><span class="history-dot"></span><span>Elliptic PDE regularity</span></button>
+        <button class="history-item" data-toast="This is a sample research session."><span class="history-dot"></span><span>Optimal transport notes</span></button>
       </div>
       <div class="sidebar-bottom">
-        <div class="plan-card"><div class="plan-top"><span class="sparkle">✳</span><span>Made for the “wait, why?”</span></div><p>Get clear, patient explanations for every step.</p><button data-toast="You're already on the list.">Explore Proof <span>↗</span></button></div>
-        <button class="profile" data-toast="Account settings are coming soon."><span class="avatar">A</span><span class="profile-info"><strong>Alex Morgan</strong><small>Free plan</small></span><span class="more">···</span></button>
+        <div class="workspace-card">
+          <div class="workspace-card-top"><span class="workspace-mark">◇</span><span>Quantitative research</span></div>
+          <p>Models, derivations, and open mathematical questions.</p>
+          <button data-toast="Workspace settings are coming soon.">Workspace details <span>↗</span></button>
+        </div>
+        <button class="profile" data-toast="Account settings are coming soon.">
+          <span class="avatar">A</span>
+          <span class="profile-info"><strong>Research workspace</strong><small>Private session</small></span>
+          <span class="more">···</span>
+        </button>
       </div>
     </aside>
     <main class="main-panel">
       <header class="topbar">
         <button class="icon-button mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
-        <div class="model-picker"><span class="online-dot"></span> Proof tutor <span class="chevron">⌄</span></div>
-        <div class="top-actions"><button class="share-button" id="shareButton"><span>↗</span> Share</button><button class="icon-button more-button" aria-label="More options">···</button></div>
+        <div class="breadcrumb"><span>RESEARCH</span><i>/</i><strong>SESSION 01</strong></div>
+        <div class="top-actions">
+          <div class="preview-status"><span></span> RESEARCH PREVIEW</div>
+          <button class="share-button" id="shareButton"><span>↗</span> Share</button>
+          <button class="icon-button more-button" aria-label="More options">···</button>
+        </div>
       </header>
-      <section class="conversation" id="conversation" aria-label="Chat conversation">
-        <div class="palette-explorer" aria-label="Choose a color palette">
-          <div class="palette-heading"><span>EXPLORE COLORWAYS</span><span>7 DUO PALETTES</span></div>
-          <div class="palette-options" role="group" aria-label="Color palette options">
-            <button class="palette-option active" data-theme="plum" aria-pressed="true"><span class="palette-dots"><i></i><i></i></span><span>Plum Nocturne</span></button>
-            <button class="palette-option" data-theme="ember" aria-pressed="false"><span class="palette-dots"><i></i><i></i></span><span>Hellenic ember</span></button>
-            <button class="palette-option" data-theme="aegean" aria-pressed="false"><span class="palette-dots"><i></i><i></i></span><span>Aegean blue</span></button>
-            <button class="palette-option" data-theme="olive" aria-pressed="false"><span class="palette-dots"><i></i><i></i></span><span>Olive bloom</span></button>
-            <button class="palette-option" data-theme="iris" aria-pressed="false"><span class="palette-dots"><i></i><i></i></span><span>Iris dusk</span></button>
-            <button class="palette-option" data-theme="coral" aria-pressed="false"><span class="palette-dots"><i></i><i></i></span><span>Sunset coral</span></button>
-            <button class="palette-option" data-theme="ionian" aria-pressed="false"><span class="palette-dots"><i></i><i></i></span><span>Ionian teal</span></button>
+      <section class="conversation" id="conversation" aria-label="Research conversation">
+        <div class="session-meta">
+          <div><span class="meta-overline">QUANTITATIVE FINANCE</span><span class="meta-divider">/</span><span class="meta-topic">Stochastic volatility</span></div>
+          <span class="method-tag"><span>∿</span> DERIVATION</span>
+        </div>
+        <div class="date-label"><span></span> HESTON MODEL <span></span></div>
+        <div class="user-message-row">
+          <div class="user-message">Starting from the Heston dynamics, derive the Riccati system for the conditional characteristic function of log price. Keep the drift general and state the transform normalization.</div>
+        </div>
+        <div class="assistant-heading">
+          <span class="assistant-mark">∑</span><span>PATH TO REASON</span><span class="answer-time">DERIVATION 01</span>
+        </div>
+        <article class="answer-card">
+          <p class="answer-intro">Let <span class="math-inline">X<sub>t</sub> = log S<sub>t</sub></span>, with variance state <span class="math-inline">v<sub>t</sub></span>. Use the affine transform ansatz and match coefficients in the backward equation.</p>
+          <section class="derivation-block">
+            <div class="block-heading"><span class="block-index">01</span><h2>Dynamics</h2><span class="block-caption">CORRELATED BROWNIAN DRIVERS</span></div>
+            <div class="equation-panel dynamics">
+              <div><span class="eq-label">PRICE</span><span class="equation">dX<sub>t</sub> = (μ − ½v<sub>t</sub>)dt + √v<sub>t</sub> dW<sub>t</sub><sup>S</sup></span></div>
+              <div><span class="eq-label">VARIANCE</span><span class="equation">dv<sub>t</sub> = κ(θ − v<sub>t</sub>)dt + ξ√v<sub>t</sub> dW<sub>t</sub><sup>v</sup></span></div>
+              <div><span class="eq-label">CORRELATION</span><span class="equation">d⟨W<sup>S</sup>, W<sup>v</sup>⟩<sub>t</sub> = ρdt</span></div>
+            </div>
+          </section>
+          <section class="derivation-block">
+            <div class="block-heading"><span class="block-index">02</span><h2>Affine transform</h2><span class="block-caption">τ = T − t</span></div>
+            <div class="equation-panel transform-equation"><span class="equation">Φ(u; τ) = 𝔼<sub>t</sub>[e<sup>iuX<sub>T</sub></sup>] = exp(iuX<sub>t</sub> + C(τ,u) + D(τ,u)v<sub>t</sub>)</span></div>
+          </section>
+          <section class="derivation-block">
+            <div class="block-heading"><span class="block-index">03</span><h2>Riccati system</h2><span class="block-caption">COEFFICIENT MATCHING</span></div>
+            <div class="riccati-grid">
+              <div class="riccati-card"><span>DYNAMIC COEFFICIENT</span><div class="equation">∂<sub>τ</sub>D = ½ξ²D² + (ρξiu − κ)D − ½(u² + iu)</div></div>
+              <div class="riccati-card"><span>SCALAR COEFFICIENT</span><div class="equation">∂<sub>τ</sub>C = κθD + iuμ</div></div>
+            </div>
+          </section>
+          <div class="normalization-row">
+            <span class="normalization-label">NORMALIZATION</span>
+            <span class="initial-condition">C(0,u) = 0</span>
+            <span class="initial-condition">D(0,u) = 0</span>
+            <span class="normalization-note">so Φ(u; 0) = e<sup>iuX<sub>t</sub></sup></span>
+          </div>
+          <div class="research-note">
+            <span class="note-icon">i</span>
+            <p>Under risk-neutral dynamics, substitute <span class="math-inline">μ = r − q</span>. Closed-form evaluation still requires a consistent complex-log branch choice.</p>
+          </div>
+          <div class="answer-footer">
+            <span><span class="footer-dot"></span> Symbolic derivation <i>·</i> no numerical calibration applied</span>
+            <div class="feedback-actions">
+              <button aria-label="Copy derivation" data-copy="Heston Riccati system: D' = 1/2 xi^2 D^2 + (rho xi i u - kappa)D - 1/2(u^2 + iu); C' = kappa theta D + iu mu; C(0)=D(0)=0.">⧉</button>
+              <button aria-label="More derivation options" data-toast="Derivation tools are coming soon.">···</button>
+            </div>
+          </div>
+        </article>
+        <div class="follow-up-label">CONTINUE THE ANALYSIS</div>
+        <div class="suggestions">
+          <button class="suggestion" data-prompt="Examine branch-consistent closed-form solutions for the Heston Riccati system."><span class="suggestion-icon">↗</span><span>Closed-form branch convention</span><span class="suggestion-arrow">→</span></button>
+          <button class="suggestion" data-prompt="Analyze the moment-explosion boundary implied by the Heston Riccati equation."><span class="suggestion-icon">∿</span><span>Moment-explosion boundary</span><span class="suggestion-arrow">→</span></button>
+        </div>
+      </section>
+      <div class="composer-wrap">
+        <div class="composer" id="composer">
+          <textarea id="messageInput" rows="1" placeholder="Enter a research question, model, or derivation…" aria-label="Research prompt"></textarea>
+          <div class="composer-bottom">
+            <div class="composer-tools"><button class="tool-button" data-toast="Reference uploads are coming soon." aria-label="Attach a reference">＋</button><span class="workflow-label"><span>∫</span> SYMBOLIC WORKFLOW</span></div>
+            <button class="send-button" id="sendButton" aria-label="Submit research prompt" disabled>↑</button>
           </div>
         </div>
-        <div class="date-label"><span></span> TODAY <span></span></div>
-        <div class="user-message-row"><div class="user-message">Can you help me solve <span class="math-inline">x² − 5x + 6 = 0</span> and explain why each step works?</div></div>
-        <div class="assistant-heading"><span class="assistant-mark">∑</span><span>PROOF</span><span class="answer-time">just now</span></div>
-        <article class="answer-card">
-          <p class="answer-intro">Absolutely. We’re looking for the values of <span class="math-inline">x</span> that make the equation true. Let’s find them together.</p>
-          <div class="step-row"><div class="step-number">01</div><div class="step-content"><div class="step-title">Look for a factor pair</div><p>We need two numbers that <strong>multiply to 6</strong> and <strong>add to −5</strong>.</p><div class="factor-chips"><span>−2 × −3 = 6</span><span>−2 + −3 = −5</span></div></div></div>
-          <div class="step-row"><div class="step-number">02</div><div class="step-content"><div class="step-title">Rewrite as factors</div><p>That pair lets us split the quadratic into two simpler pieces:</p><div class="equation-box"><span class="equation">(x − 2)(x − 3) = 0</span><button class="copy-equation" aria-label="Copy equation" data-copy="(x − 2)(x − 3) = 0">⧉</button></div></div></div>
-          <div class="step-row"><div class="step-number">03</div><div class="step-content"><div class="step-title">Set each factor to zero</div><p>If two things multiply to zero, at least one of them must be zero.</p><div class="split-equations"><span>x − 2 = 0 <b>→</b> x = 2</span><span>x − 3 = 0 <b>→</b> x = 3</span></div></div></div>
-          <div class="answer-result"><span class="result-check">✓</span><div><small>YOUR SOLUTIONS</small><div class="result-values">x = 2 <i>or</i> x = 3</div></div><span class="result-sparkle">✳</span></div>
-          <div class="answer-footer"><span>Does that make sense so far?</span><div class="feedback-actions"><button aria-label="Helpful" data-toast="Thanks for the feedback!">♡</button><button aria-label="Not helpful" data-toast="Thanks, I’ll keep improving.">♧</button><button aria-label="Copy answer" data-copy="The solutions are x = 2 or x = 3.">⧉</button></div></div>
-        </article>
-        <div class="follow-up-label">KEEP GOING</div>
-        <div class="suggestions"><button class="suggestion" data-prompt="Can you check the solutions by substituting them back in?"><span class="suggestion-icon">⌕</span><span>Can we check the answer?</span><span class="suggestion-arrow">↗</span></button><button class="suggestion" data-prompt="Give me another factoring problem like this one to try."><span class="suggestion-icon">✳</span><span>Give me one to try</span><span class="suggestion-arrow">↗</span></button></div>
-      </section>
-      <div class="composer-wrap"><div class="composer" id="composer"><textarea id="messageInput" rows="1" placeholder="Ask anything about math…" aria-label="Message Proof"></textarea><div class="composer-bottom"><div class="composer-tools"><button class="tool-button" data-toast="Image upload is coming soon." aria-label="Add image">＋</button><button class="mode-button" data-toast="Choose a subject (coming soon)."><span>◈</span> Algebra <span class="chevron">⌄</span></button></div><button class="send-button" id="sendButton" aria-label="Send message" disabled>↑</button></div></div><div class="privacy-note"><span class="lock-icon">⌑</span> Proof can make mistakes. Check important work.</div></div>
+        <div class="privacy-note">Frontend research concept · no computation engine is connected</div>
+      </div>
     </main>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
